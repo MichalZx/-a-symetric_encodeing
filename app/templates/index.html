@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption App</title>
+</head>
+<body>
+    <h1>Symmetric Encryption</h1>
+    <form action="/symmetric/key" method="get">
+        <button type="submit">Generate Symmetric Key</button>
+    </form>
+
+    <form action="/symmetric/key" method="post">
+        <label for="key">Set Symmetric Key:</label>
+        <input type="text" id="key" name="key" placeholder="Enter symmetric key">
+        <button type="submit">Set Symmetric Key</button>
+    </form>
+
+    <form action="/symmetric/encode" method="post">
+        <label for="message">Enter Message to Encrypt:</label><br>
+        <input type="text" id="message" name="message"><br><br>
+        <input type="submit" value="Encrypt">
+    </form>
+
+    <form action="/symmetric/decode" method="post">
+        <label for="encrypted_message">Encrypted Message to Decrypt:</label>
+        <input type="text" id="encrypted_message" name="encrypted_message" placeholder="Enter encrypted message">
+        <button type="submit">Decrypt Message</button>
+    </form>
+
+    <h1>Asymmetric Encryption</h1>
+    <form action="/asymmetric/key" method="get">
+        <button type="submit">Generate Asymmetric Key Pair</button>
+    </form>
+
+    <form action="/asymmetric/key" method="post">
+        <label for="public_key">Public Key:</label>
+        <input type="text" id="public_key" name="public_key" placeholder="Enter public key">
+        <label for="private_key">Private Key:</label>
+        <input type="text" id="private_key" name="private_key" placeholder="Enter private key">
+        <button type="submit">Set Asymmetric Key Pair</button>
+    </form>
+
+    <form action="/asymmetric/encrypt" method="post">
+        <label for="message_encrypt">Message to Encrypt:</label>
+        <input type="text" id="message_encrypt" name="message" placeholder="Enter message">
+        <button type="submit">Encrypt Message</button>
+    </form>
+
+    <form action="/asymmetric/decrypt" method="post">
+        <label for="ciphertext">Ciphertext to Decrypt:</label>
+        <input type="text" id="ciphertext" name="ciphertext" placeholder="Enter ciphertext">
+        <button type="submit">Decrypt Message</button>
+    </form>
+
+    <h1>Signature</h1>
+    <form action="/asymmetric/sign" method="post">
+        <label for="message_sign">Message to Sign:</label>
+        <input type="text" id="message_sign" name="message" placeholder="Enter message">
+        <button type="submit">Sign Message</button>
+    </form>
+
+    <form action="/asymmetric/verify" method="post">
+        <label for="message_verify">Message:</label>
+        <input type="text" id="message_verify" name="message" placeholder="Enter message">
+        <label for="signature">Signature:</label>
+        <input type="text" id="signature" name="signature" placeholder="Enter signature">
+        <button type="submit">Verify Signature</button>
+    </form>
+</body>
+</html>
