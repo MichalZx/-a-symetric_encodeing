@@ -228,7 +228,7 @@ async def verify_message_endpoint(message: str, signature: str):
             signature_bytes,
             message.encode(),
             padding.PSS(
-                mgf=padding.MGF1(),
+                mgf=padding.MGF1(hashes.SHA256()),
                 salt_length=padding.PSS.MAX_LENGTH
             ),
             hashes.SHA256()
